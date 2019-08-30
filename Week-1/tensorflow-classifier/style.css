@@ -1,0 +1,16 @@
+.center {
+    margin-top: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+img, video{
+    width: 450;
+    height: 450;
+}
+
+
+body{
+  background: url('background-image.png') no-repeat center center fixed;
+  background-size: cover;
+}
