@@ -28,7 +28,7 @@ async function realtime() {
 	document.getElementById('move-up').addEventListener('click', () => addExample(0));
 	document.getElementById('move-down').addEventListener('click', () => addExample(1));
 	document.getElementById('move-left').addEventListener('click', () => addExample(2));
-	document.getElementById('move-right').addEventListener('click', () => addExample(2));
+	document.getElementById('move-right').addEventListener('click', () => addExample(3));
 
 
 	while (true) {

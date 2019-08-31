@@ -9,6 +9,10 @@ img, video{
     height: 450;
 }
 
+.image-modal{
+  width: 250;
+  height: 170;
+}
 
 body{
   background: url('background-image.png') no-repeat center center fixed;
