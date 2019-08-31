@@ -47,38 +47,38 @@
 
     <!-- Div for real time detection -->
     <div id="real-time-detection" class="center" style="display:block">
-
         <div class="row">
-            <div class="col">
+            <div class="col" style="margin-top: -150px;">
                 <!-- Video frame colum -->
-                <div class="row m-3">
-                    <div class="text-center">
-                        <video autoplay playsinline muted id="webcam" class="center p-5"></video>
-                        <button class="btn btn-primary" onclick="realtime()">Start</button>
+                <div class="row">
+                    <div class="col text-center">
+                        <video autoplay playsinline muted id="webcam" width="224" height="224" class="center p-3"></video>
+                        <button class="btn btn-primary m-3" onclick="realtime()">Start</button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <button class="btn btn-primary" onclick="classifierFunction()">Add Move Up</button>
+                        <button class="btn btn-primary" id="move-up" >Add Move Up</button>
                     </div>
                     <div class="col">
-                        <button class="btn btn-primary" onclick="classifierFunction()">Add Move Down</button>
+                        <button class="btn btn-primary" id="move-down" >Add Move Down</button>
                     </div>
                     <div class="col">
-                        <button class="btn btn-primary" onclick="classifierFunction()">Add Move Left</button>
+                        <button class="btn btn-primary" id="move-left" >Add Move Left</button>
                     </div>
                     <div class="col">
-                        <button class="btn btn-primary" onclick="classifierFunction()">Add Move Right</button>
+                        <button class="btn btn-primary" id="move-right" >Add Move Right</button>
                     </div>
                 </div>
             </div>
 
             <div class="col">
                 <div class="text-center">
-                    <canvas width="300" height="300" id="area_de_dibujo" style="background-color: red"></canvas>
+                    <div id="display">Move To: </div>
+                    <canvas width="400" height="400" id="canvas_space" style="background-color: white"></canvas>
                     <!-- Button trigger modal -->
                     </br>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#exampleModal">
                         How does it work
                     </button>
 
