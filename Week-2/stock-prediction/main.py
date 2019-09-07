@@ -161,13 +161,32 @@ def analyseWithLinearRegression():
         difference_test_predicted_prices = offset_value(test_start_date,test,predictions_df_list)
 
         predictions_df_list['prices'] = predictions_df_list['prices'] + difference_test_predicted_prices
-
-        predictions_df_list['ewma'] = pd.ewm(predictions_df_list['prices'], span=10, frenq='D').mean()
+        predictions_df_list['ewma'] = pd.Series.ewm(predictions_df_list['prices'], span=10).mean()
+        
         predictions_df_list['actual_value'] = test['prices']
-        predictions_df_list['actual_value_ewma'] = pd.ewm(predictions_df_list['actual_value'], span=10, freq='D').mean()
+        predictions_df_list['actual_value_ewma'] = pd.Series.ewm(predictions_df_list['actual_value'], span=10).mean()
         # Changing column names
+
+        
         predictions_df_list.columns = ['predicted_price', 'average_predicted_price', 'actual_price', 'average_actual_price']
-        predictions_df_list.plot()
+
+        print(predictions_df_list)
+        predictions_plot = predictions_df_list.plot(title='Random Forest 8-2 years after aligning & smoothing')
+        
+        predictions_plot.set_xlabel("Dates")
+        predictions_plot.set_ylabel("Stock Prices")
+        fig = predictions_plot.get_figure()
+        fig.savefig("random forest after smoothing 2.png")
+        
+        # predictions_df_list_average = predictions_df_list[['average_predicted_price', 'average_actual_price']]
+        # predictions_df_list_average.plot()
+        
+
+        
+        
+        # print('done')
+        # predictions_df_list_average.show()
+
 
 
 def run():
